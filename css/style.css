@@ -11,6 +11,9 @@ body {
 	border-color: transparent;
 }
 
+.navbar-footer{
+	background-color: #bcbca9;
+}
 .search{
 	margin-top: 40px;
 }
@@ -39,8 +42,6 @@ body {
 	color: white;
 	padding-right: 0 !important;
 }
-
-
 .centered{
 	position: absolute;
 	top: 80%;
@@ -68,6 +69,7 @@ body {
 
 .big{
 	font-size: 25px;
+	color: white;
 
 }
 
@@ -77,10 +79,8 @@ body {
 
 .hd {
 	font-size: 25px;
-}
+	color : black;
 
-.hd a{
-	color: black;
 }
 
 .find{
