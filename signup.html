@@ -10,7 +10,6 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-    <script type="text/javascript" src="js/angular.min.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -19,7 +18,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
- <body>
+  <body>
     <div class="container-fluid">
       <nav class="navbar navbar-default navbar-top">
         <div class="container-fluid">
@@ -83,6 +82,8 @@
             <input type="submit" style="margin-right: 10px" value="Submit">
             <input type="reset" value="Reset">
             <br>
+            <br>
+            <div class="g-recaptcha" data-sitekey="6LfHdWAUAAAAANUH4uWBhAls9wX8gViBCXDCDsPB"></div>
             <P>Your Dont Have Account?<a href="signup.html">click here<</a>
             </P>
           </div>
@@ -108,39 +109,47 @@
 
 <div class="space-30 col-md-2">&nbsp;</div>
 <h2>Sign Up</h2>
-<div ng-app="" class="row">
-  <div class="col-6">
-<form class="col-md-2">
-First name:<br>
-<input style="padding-right: 19rem;" placeholder="First Name"  ng-model ="name" type="text" name="firstname" >
 <br>
-Last name:<br>
-<input style="padding-right: 19rem;" placeholder="Last Name" ng-model ="name2" type="text" name="lastname">
-<br>
-E-mail:<br>
-<input style="padding-right: 19rem;" placeholder="Your Email" ng-model="email" type="email" name="email">
-<br>
-User password:<br>
-<input style="padding-right: 19rem;" placeholder="Your Password" type="password" name="psw">
-<br>
- Birthday:<br>
-  <input style="padding-right: 0rem;" placeholder="Birthday" ng-model="birthday"   type="date" name="bday">
-<br>
-<br><input type="radio" name="gender" value="male" checked>Male<br>
-<input type="radio" name="gender" value="female">Female 
-<br><br>
-<input type="submit" value="Submit">
-<input type="reset" value="Reset">
-</div>
-<div style="margin-left: 67rem">
-<h3>Your Name : {{name}} {{name2}}</h3>
-<h3> Your E-mail   : {{email}}</h3>
-<h3> Your Birthday : {{birthday}}</h3>
-
-</div>
-</div>
-
-<footer style="align-self: center;" >
+<body>
+<div class="col-md-12">
+<form ng-app="" name="form" style="padding-left: 23rem">
+  <table>
+    <tr>
+      <p><label>Your Name</label></p>
+      <p><input name="myName" ng-model="myName" required style="padding-right: 10rem">
+        <span ng-show="form.myName.$touched && form.myName.$invalid" style="color: red">The name is requred</span>
+      </p>
+    </tr>
+    <tr>
+      <p><label>Email</label></p>
+      <p><input type="email" name="email" ng-model="email" style="padding-right: 10rem">
+        <span ng-show="form.email.$error.email" style="color: red">This Wrong</span>
+      </p>
+    </tr>
+    <tr>
+      <p><label>Your Password</label></p>
+      <p><input type="password" name="password" ng-model="password" style="padding-right: 10rem">
+        <span ng-show="form.password.$error.password" style="color: red">write again</span></p>
+    </tr>
+    <tr>
+      <p><label>Your Birthday</label></p>
+      <p><input name="Bday" ng-model="myBirthday" type="date" required style="padding-right: 0rem">
+      </p>
+    </tr>
+    <tr>
+      <p><label>Your Gender</label></p>
+      <p><input type="radio" name="gender" value="male" checked>Male<br>
+          <input type="radio" name="gender" value="female">Female 
+      </p>
+    </tr>
+    <br>
+    <input type="submit" style="margin-right: 2rem" value="Submit">
+    <input type="reset" value="Reset">
+  </div>
+  </table>
+</form>
+ </div>
+ <footer style="align-self: center; margin-top: 50rem;" >
   <div class="container-fluid">
     <div class="row " style="margin-left:0rem; margin-top: 10rem;"> 
       <span> <center> FOLLOW US </center></span>
@@ -154,8 +163,17 @@ User password:<br>
                 <img  class="col-4" src="img/twit.png" width="70px" height="70px"><a href="https://www.twitter.com"> twitter</a> 
           </center>      
         </div>
+      </div>
        <nav class="navbar-footer">
 <p class="text-center">Copyright &copy; 2018 - All Rights Reserved</p>
-</nav>
+       </nav>
 </footer>
-</form> 
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script> 
+    <script type="text/javascript" src="js/angular.min.js"></script>
+  </body>
+</html>
